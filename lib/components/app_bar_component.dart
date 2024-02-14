@@ -1,29 +1,24 @@
+import 'package:cat_world_app/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
   const AppBarComponent({
     super.key,
+    required this.data,
   });
-
+  final String data;
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: backgroundColor,
+      elevation: 0,
       centerTitle: true,
-      title: const Text(
-        "Types of cats",
-        style: TextStyle(fontSize: 18),
+      title: Text(
+        data,
+        style: TextStyle(fontSize: 18, color: greyShade700),
       ),
-      // actions: const [
-      //   IconButton(
-      //       onPressed: null,
-      //       icon: Icon(
-      //         Icons.favorite,
-      //         color: Colors.white,
-      //       )
-      //       )
-      // ],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:cat_world_app/components/bottom_nav_bar_component.dart';
 import 'package:cat_world_app/constants/colors.dart';
+import 'package:cat_world_app/screens/cats_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   final List _screens = [
-    const Center(child: Text('1')),
+    const CatsScreen(),
     const Center(child: Text('2')),
   ];
   Widget build(BuildContext context) {
@@ -32,12 +33,3 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-// GridView(
-//         gridDelegate:
-//             const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-//         children: [
-//           Card(
-//             child: Text("Cat"),
-//           )
-//         ],
-//       ),

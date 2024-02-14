@@ -1,4 +1,4 @@
-import 'package:cat_world_app/screens/cats_home_screen.dart';
+import 'package:cat_world_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
