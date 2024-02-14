@@ -15,14 +15,15 @@ class AppBarComponent extends StatelessWidget implements PreferredSizeWidget {
         "Types of cats",
         style: TextStyle(fontSize: 18),
       ),
-      actions: const [
-        IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.favorite,
-              color: Colors.white,
-            ))
-      ],
+      // actions: const [
+      //   IconButton(
+      //       onPressed: null,
+      //       icon: Icon(
+      //         Icons.favorite,
+      //         color: Colors.white,
+      //       )
+      //       )
+      // ],
     );
   }
 }
