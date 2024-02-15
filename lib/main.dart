@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:cat_world_app/data/cats.dart';
 import 'package:cat_world_app/models/cats.dart';
 import 'package:cat_world_app/screens/home_screen.dart';
@@ -8,8 +6,6 @@ import 'package:flutter/material.dart';
 List<CatsModel> listCats = [];
 
 void main() {
-  // final cats =
-  //     allCats.map<CatsModel>((json) => CatsModel.fromJson(json)).toList();
   for (var element in allcats["cats"]) {
     listCats.add(CatsModel.fromJson(element));
   }
@@ -27,6 +23,3 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-// CatDetailsScreen(
-//         cat: listCats[0],
-//       ),

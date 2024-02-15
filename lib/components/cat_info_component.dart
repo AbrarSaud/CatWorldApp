@@ -16,16 +16,20 @@ class CatInfoComponent extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: const BoxDecoration(
           color: white, borderRadius: BorderRadius.all(Radius.circular(8))),
-      child:  Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-           subHeader,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            subHeader,
+            style: const TextStyle(
+              fontFamily: 'Merienda',
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
           ),
           Text(
-           data,
-            style: TextStyle(fontSize: 18),
+            data,
+            style: const TextStyle(fontSize: 18, fontFamily: 'Merienda'),
           ),
         ],
       ),

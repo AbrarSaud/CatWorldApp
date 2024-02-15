@@ -13,7 +13,7 @@ class CatsScreen extends StatelessWidget {
               backgroundColor: backgroundColor,
 
       appBar: const AppBarComponent(
-        data: "Types of cats",
+        data: "Types of cats", isBackButton: true,
       ),
       body: Padding( 
         padding:  const EdgeInsets.symmetric(horizontal: 15),

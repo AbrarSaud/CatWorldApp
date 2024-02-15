@@ -1,7 +1,6 @@
 import 'package:cat_world_app/components/app_bar_component.dart';
 import 'package:cat_world_app/components/cat_info_component.dart';
 import 'package:cat_world_app/constants/colors.dart';
-import 'package:cat_world_app/main.dart';
 import 'package:cat_world_app/models/cats.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +13,12 @@ class CatDetailsScreen extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: AppBarComponent(
         data: cat.name,
+        isBackButton: false,
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: greyShade700,
+        onPressed: () {},
+        child: const Icon(Icons.favorite_outline),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -24,11 +29,13 @@ class CatDetailsScreen extends StatelessWidget {
                 cat.imageLink ??
                     'https://png.pngtree.com/png-vector/20190917/ourmid/pngtree-not-found-outline-icon-vectors-png-image_1737857.jpg'),
             Padding(
-              padding: EdgeInsets.only(top: 15.0),
+              padding: const EdgeInsets.only(top: 15.0),
               child: Text(
                 cat.name ?? 'no name',
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 32,
+                    fontFamily: 'Merienda'),
               ),
             ),
             CatInfoComponent(subHeader: 'Origin:', data: cat.origin ?? ''),
