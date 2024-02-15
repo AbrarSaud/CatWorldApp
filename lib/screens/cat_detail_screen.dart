@@ -25,43 +25,39 @@ class _CatDetailsScreenState extends State<CatDetailsScreen> {
     var favoriteCatsProvider = Provider.of<ProviderCat>(context);
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: AppBarComponent(
-        data: widget.cat.name,
-        isBackButton: false,
-      ),
+      appBar: AppBarComponent(data: widget.cat.name, isBackButton: false),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: greyShade700,
-        onPressed: () {
-          isFavorite = !isFavorite;
-          if (isFavorite) {
-            favoriteCatsProvider.addToFavorites(widget.cat);
-          } else {
-            favoriteCatsProvider.removeFromFavorites(widget.cat);
-          }
-        },
-        child: isFavorite
-            ? Icon(Icons.favorite)
-            : const Icon(Icons.favorite_outline),
-      ),
+          backgroundColor: greyShade700,
+          onPressed: () {
+            isFavorite = !isFavorite;
+            if (isFavorite) {
+              favoriteCatsProvider.addToFavorites(widget.cat);
+            } else {
+              favoriteCatsProvider.removeFromFavorites(widget.cat);
+            }
+          },
+          child: isFavorite
+              ? const Icon(Icons.favorite)
+              : const Icon(Icons.favorite_outline)),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: Column(
-          children: [
-            Image.network(
-              widget.cat.imageLink ??
-                  'https://png.pngtree.com/png-vector/20190917/ourmid/pngtree-not-found-outline-icon-vectors-png-image_1737857.jpg',
-              height: 200,
+          padding: const EdgeInsets.symmetric(horizontal: 25),
+          child: Column(children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Image.network(
+                  widget.cat.imageLink ??
+                      'https://png.pngtree.com/png-vector/20190917/ourmid/pngtree-not-found-outline-icon-vectors-png-image_1737857.jpg',
+                  height: 200),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Text(
-                widget.cat.name ?? 'no name',
-                style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                    fontFamily: 'Merienda'),
-              ),
-            ),
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Text(
+                  widget.cat.name ?? 'no name',
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 32,
+                      fontFamily: 'Merienda'),
+                )),
             CatInfoComponent(
                 subHeader: 'Origin:', data: widget.cat.origin ?? ''),
             CatInfoComponent(
@@ -73,9 +69,7 @@ class _CatDetailsScreenState extends State<CatDetailsScreen> {
             CatInfoComponent(
                 subHeader: 'Intelligence:',
                 data: widget.cat.intelligence.toString()),
-          ],
-        ),
-      ),
+          ])),
     );
   }
 }
