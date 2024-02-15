@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:cat_world_app/constants/colors.dart';
 
-class CatsCardComponent extends StatelessWidget {
+class CatsCardComponent extends StatefulWidget {
   const CatsCardComponent({
     Key? key,
     required this.cat,
@@ -14,20 +14,26 @@ class CatsCardComponent extends StatelessWidget {
   final CatsModel cat;
 
   @override
+  State<CatsCardComponent> createState() => _CatsCardComponentState();
+}
+
+class _CatsCardComponentState extends State<CatsCardComponent> {
+  @override
   Widget build(BuildContext context) {
     return Card(
         child: GestureDetector(
       onTap: () {
         context.pushNav(
             screen: CatDetailsScreen(
-          cat: cat,
+          cat: widget.cat,
+          onPressed: () {},
         ));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-              child: Image.network(cat.imageLink ??
+              child: Image.network(widget.cat.imageLink ??
                   'https://png.pngtree.com/png-vector/20190917/ourmid/pngtree-not-found-outline-icon-vectors-png-image_1737857.jpg')),
           const SizedBox(
             height: 5,
@@ -40,7 +46,7 @@ class CatsCardComponent extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     overflow: TextOverflow.ellipsis,
-                    cat.name ?? 'no name',
+                    widget.cat.name ?? 'no name',
                     style:
                         TextStyle(color: greyShade700, fontFamily: 'Merienda'),
                   ),

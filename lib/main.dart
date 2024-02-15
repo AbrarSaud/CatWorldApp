@@ -1,9 +1,12 @@
 import 'package:cat_world_app/data/cats.dart';
 import 'package:cat_world_app/models/cats.dart';
+import 'package:cat_world_app/provider/provider_cat.dart';
 import 'package:cat_world_app/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-List<CatsModel> listCats = [];
+  List<CatsModel> listFavorite = [];
+  List<CatsModel> listCats = [];
 
 void main() {
   for (var element in allcats["cats"]) {
@@ -17,9 +20,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  ChangeNotifierProvider(create: (context)=> ProviderCat(),
+    child: const  MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
-    );
+    ),);
+   
   }
 }

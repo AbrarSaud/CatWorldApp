@@ -22,6 +22,7 @@ class CatsScreen extends StatelessWidget {
           gridDelegate:
               const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemBuilder: (BuildContext context, int index) {
+            
             return  CatsCardComponent(cat: listCats[index],);
             },
          

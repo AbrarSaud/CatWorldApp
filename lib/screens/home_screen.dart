@@ -1,6 +1,7 @@
 import 'package:cat_world_app/components/bottom_nav_bar_component.dart';
 import 'package:cat_world_app/constants/colors.dart';
 import 'package:cat_world_app/screens/cats_screen.dart';
+import 'package:cat_world_app/screens/favorite_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List _screens = [
     const CatsScreen(),
-    const Center(child: Text('2')),
+    const FavoriteScreen(),
   ];
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,4 +33,3 @@ class _HomeScreenState extends State<HomeScreen> {
         body: _screens[_selectedIndex]);
   }
 }
-
