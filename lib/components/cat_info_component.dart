@@ -17,7 +17,7 @@ class CatInfoComponent extends StatelessWidget {
       decoration: const BoxDecoration(
           color: white, borderRadius: BorderRadius.all(Radius.circular(8))),
       child:  Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
            subHeader,
